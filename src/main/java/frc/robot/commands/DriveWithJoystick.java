@@ -84,15 +84,17 @@ public class DriveWithJoystick {
             actPower *= 0.20;
             climber.driveActuator(actPower);
             
-            sensor.getWinchSensor();
-            TCSColor winchSensor = sensor.getWinchSensor();
-            int h = winchSensor.getH();
+
+            //color sensor stuff
+            //sensor.getWinchSensor();
+            //TCSColor winchSensor = sensor.getWinchSensor();
+            //int h = winchSensor.getH();
             
             float winchPower = 0.0f;
-            if (h>40 && Control.getXboxCtrl().getLeftBumper()){
+            if (/*h>40 && enable color sensor limit when seeing red*/Control.getXboxCtrl().getRightBumper()){
                 winchPower -=1.0f;
             }
-            if (Control.getXboxCtrl().getRightBumper()){
+            if (Control.getXboxCtrl().getLeftBumper()){
                 winchPower +=1.0f;
             }
             //reduce winch power to 50%

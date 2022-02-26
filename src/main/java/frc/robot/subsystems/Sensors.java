@@ -18,7 +18,7 @@ public class Sensors extends SubsystemBase {
         tcsColorSensor.init();
 
     }
-
+    /*
     @Override
     public void periodic(){
         Color color1 = colorSensor1.getColor();
@@ -30,7 +30,7 @@ public class Sensors extends SubsystemBase {
         TCSColor color3 = tcsColorSensor.readColors();
         System.out.println("TCS Color sensor seeing " + color3);
     }
-
+    */
     public TCSColor getWinchSensor(){
         return tcsColorSensor.readColors();
     }
