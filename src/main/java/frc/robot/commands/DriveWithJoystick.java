@@ -80,8 +80,8 @@ public class DriveWithJoystick {
                 }
             }
             //System.out.println(power);
-            //reduce actuator power to 20%
-            actPower *= 0.20;
+            //reduce actuator power to 50%
+            actPower *= 0.50;
             climber.driveActuator(actPower);
             
 
@@ -97,11 +97,24 @@ public class DriveWithJoystick {
             if (Control.getXboxCtrl().getLeftBumper()){
                 winchPower +=1.0f;
             }
+
+
             //reduce winch power to 50%
-            winchPower *= 0.50;
+            winchPower *= 0.80;
+
+            if(Control.getXboxCtrl().getAButton()){
+                winchPower = 0.3f;
+                System.out.println("pressing A button");
+            }
+            
             climber.driveWinch(winchPower);
             System.out.println("Winch: " + winchPower + " Act: " + actPower);
             
+            
+            
+ 
+            
+
 
 
         }

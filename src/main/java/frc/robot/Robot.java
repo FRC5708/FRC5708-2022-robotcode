@@ -115,7 +115,7 @@ public class Robot extends TimedRobot {
       case reverse:
         long deltaTime = System.currentTimeMillis() - m_autoStartedTime;
         //System.out.println(m_autoStartedTime);
-        if ( deltaTime >= 2000){
+        if ( deltaTime >= 4000){
           m_autoState = m_autoStates.done; 
           System.out.println("Robot stopped. ");
           driveTrain.SetMotors(0, 0);
